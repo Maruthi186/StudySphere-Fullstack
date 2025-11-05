@@ -12,15 +12,14 @@ namespace StudySphereApi.Controllers
     public class GroupsController : ControllerBase
     {
         private readonly ApiDbContext _context;
-        private const int DEMO_USER_ID = 1; // Our hardcoded user
+        private const int DEMO_USER_ID = 1; 
 
         public GroupsController(ApiDbContext context)
         {
             _context = context;
         }
 
-        // --- GET Method (Read) ---
-        // This is the "smart" query
+
         [HttpGet]
         public async Task<IActionResult> GetGroups()
         {
@@ -42,7 +41,7 @@ namespace StudySphereApi.Controllers
             return Ok(groups);
         }
 
-        // --- POST Method (Create) ---
+
         [HttpPost]
         public async Task<IActionResult> CreateGroup([FromBody] Group newGroup)
         {
@@ -51,7 +50,7 @@ namespace StudySphereApi.Controllers
             return Ok(newGroup);
         }
 
-        // --- DELETE Method (Delete Group) ---
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGroup(int id)
         {
@@ -66,7 +65,7 @@ namespace StudySphereApi.Controllers
             return NoContent();
         }
 
-        // --- PUT Method (Update Group) ---
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateGroup(int id, [FromBody] Group updatedGroup)
         {
