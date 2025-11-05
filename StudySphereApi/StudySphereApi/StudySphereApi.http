@@ -1,0 +1,6 @@
+@StudySphereApi_HostAddress = http://localhost:5121
+
+GET {{StudySphereApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
